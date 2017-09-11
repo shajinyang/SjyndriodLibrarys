@@ -1,4 +1,4 @@
 # Sutillibrary
     android开发常用工具类
-    ![s](/s.png)
+    ![s](https://github.com/shajinyang/SjyndriodLibrarys/blob/master/s.png)
 
