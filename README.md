@@ -1,6 +1,24 @@
 # SUtilLibrary
 ![](s.png)![](j.png)![](y.png)
 
+### 如何使用
+
+#### Android Studio
+    第一步：
+      在项目的gradle里配置
+      allprojects {
+      		repositories {
+      			...
+      			maven { url 'https://jitpack.io' }
+      		}
+      	}
+
+      第二步：
+      在module的gradle里配置
+      dependencies {
+      	        compile 'com.github.shajinyang:SjyndriodLibrarys:1.0.0'
+      	}
+
 ### android开发常用工具类
 #### AppInfoUtil
      getVersionCode 获取app版本号
