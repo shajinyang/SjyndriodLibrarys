@@ -158,11 +158,29 @@ public class MultiKeyBoardView extends LinearLayout {
 
         });
 
-        mContentView.setOnTouchListener(new OnTouchListener() {
+        /*mContentView.setOnTouchListener(new OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
                 Logger.e(event.getAction()+"");
                 if (event.getAction() == MotionEvent.ACTION_UP && noScrollViewPager.isShown()) {
+                    lockContentHeight();//显示软件盘时，锁定内容高度，防止跳闪。
+                    hideSelfLayout(false);//隐藏表情布局，显示软件盘。
+                    //软件盘显示后，释放内容高度
+                    postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            unlockContentHeightDelayed();
+                        }
+                    }, 200L);
+                }
+                return false;
+            }
+        });*/
+        mContentView.setOnTouchListener(new OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                Logger.e(event.getAction()+"");
+                if (noScrollViewPager.isShown()) {
                     lockContentHeight();//显示软件盘时，锁定内容高度，防止跳闪。
                     hideSelfLayout(false);//隐藏表情布局，显示软件盘。
                     //软件盘显示后，释放内容高度
