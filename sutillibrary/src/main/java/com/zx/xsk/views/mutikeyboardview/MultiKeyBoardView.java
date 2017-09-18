@@ -224,7 +224,7 @@ public class MultiKeyBoardView extends LinearLayout {
      * 隐藏自定义布局
      * @param showSoftInput 是否显示软件盘
      */
-    private void hideSelfLayout(boolean showSoftInput) {
+    public void hideSelfLayout(boolean showSoftInput) {
         if (noScrollViewPager.isShown()) {
             noScrollViewPager.setVisibility(View.GONE);
             if (showSoftInput) {
