@@ -18,7 +18,9 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
+import com.orhanobut.logger.Logger;
 import com.zx.xsk.baseclass.ViewPagerCommonAdapter;
 import com.zx.xsk.managers.SharedPreferenceManager;
 import com.zx.xsk.sutillibrary.R;
@@ -156,15 +158,13 @@ public class MultiKeyBoardView extends LinearLayout {
 
         });
 
-
-
         mContentView.setOnTouchListener(new OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
-
+                Logger.e(event.getAction()+"");
                 if (event.getAction() == MotionEvent.ACTION_UP && noScrollViewPager.isShown()) {
                     lockContentHeight();//显示软件盘时，锁定内容高度，防止跳闪。
-                    hideSelfLayout(true);//隐藏表情布局，显示软件盘
+                    hideSelfLayout(false);//隐藏表情布局，显示软件盘。
                     //软件盘显示后，释放内容高度
                     postDelayed(new Runnable() {
                         @Override
@@ -176,6 +176,16 @@ public class MultiKeyBoardView extends LinearLayout {
                 return false;
             }
         });
+
+    }
+
+    /**
+     * 强制关闭自定义view 和 键盘
+     */
+    public void hideAllView(){
+        hideSelfLayout(false);//隐藏表情布局，显示软件盘。
+        hideSoftInput();
+        mContentView.requestLayout();
     }
 
 
@@ -227,10 +237,10 @@ public class MultiKeyBoardView extends LinearLayout {
      * 编辑框获取焦点，并显示软件盘
      */
     private void showSoftInput() {
-        noScrollViewPager.post(new Runnable() {
+        mContentView.post(new Runnable() {
             @Override
             public void run() {
-                mInputManager.showSoftInput(noScrollViewPager, 0);
+                mInputManager.showSoftInput(mContentView, 0);
             }
         });
     }

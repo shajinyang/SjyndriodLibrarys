@@ -5,6 +5,8 @@ import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
 
 import com.zx.xsk.baseclass.ViewPagerCommonAdapter;
 import com.zx.xsk.views.NoScrollViewPager;
@@ -24,10 +26,14 @@ public class MainActivity extends AppCompatActivity {
         list.add(new TestFragment());
         list.add(new TestFragment());
         list.add(new TestFragment());
+        WebView webView= (WebView) findViewById(R.id.content_view);
+        webView.setWebViewClient(new WebViewClient());
+        webView.loadUrl("http://www.baidu.com");
         multiKeyBoardView
-                .initKeyBoardView(this,strings,list,findViewById(R.id.content_view))
+                .initKeyBoardView(this,strings,list,webView)
                 .setTabColor(0xff333333)
                 .setTabTxtColor(0xff999999,0xffffffff);
+
     }
 
 }
