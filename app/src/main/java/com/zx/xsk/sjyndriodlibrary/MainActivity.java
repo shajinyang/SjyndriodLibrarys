@@ -33,7 +33,5 @@ public class MainActivity extends AppCompatActivity {
                 .initKeyBoardView(this,strings,list,webView)
                 .setTabColor(0xff333333)
                 .setTabTxtColor(0xff999999,0xffffffff);
-
     }
-
 }

@@ -5,6 +5,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.graphics.Rect;
+import android.graphics.drawable.VectorDrawable;
 import android.os.Build;
 import android.support.annotation.Nullable;
 import android.support.design.widget.TabLayout;
@@ -17,6 +18,7 @@ import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -42,6 +44,8 @@ public class MultiKeyBoardView extends LinearLayout {
     private AppCompatActivity compatActivity;
     private NoScrollViewPager noScrollViewPager;
     private TabLayout tabLayout;
+    private LinearLayout llBg;
+    private ImageView keyBoard;
     private String[] titles;
     private ArrayList<Fragment> list;
     private InputMethodManager mInputManager;//软键盘管理类
@@ -80,11 +84,33 @@ public class MultiKeyBoardView extends LinearLayout {
         //将自定义布局加入linearlayout
         addView(view);
         noScrollViewPager= (NoScrollViewPager) view.findViewById(R.id.view_pager);
+        keyBoard= (ImageView) view.findViewById(R.id.key_board);
         tabLayout= (TabLayout) view.findViewById(R.id.tab_layout);
+        llBg= (LinearLayout) view.findViewById(R.id.ll_bg);
         noScrollViewPager.setAdapter(new ViewPagerCommonAdapter(activity.getSupportFragmentManager(),list,titles));
         tabLayout.setupWithViewPager(noScrollViewPager);
         noScrollViewPager.setOffscreenPageLimit(titles.length);
         initListner();
+        return this;
+    }
+
+
+
+    /**
+     * 设置键盘关闭图片
+     * @return
+     */
+    public MultiKeyBoardView setKeyBoardImgRes(int res){
+        keyBoard.setImageResource(res);
+        return this;
+    }
+
+    /**
+     * 设置键盘关闭图片主题色
+     * @return
+     */
+    public MultiKeyBoardView setKeyBoardDark(){
+        keyBoard.setImageDrawable(getResources().getDrawable(R.drawable.ic_keyboard_black));
         return this;
     }
 
@@ -94,8 +120,8 @@ public class MultiKeyBoardView extends LinearLayout {
      * @param tabColor
      */
     public MultiKeyBoardView setTabColor(int tabColor){
-        if(tabLayout!=null){
-            tabLayout.setBackgroundColor(tabColor);
+        if(llBg!=null){
+            llBg.setBackgroundColor(tabColor);
         }
         return this;
     }
@@ -192,6 +218,16 @@ public class MultiKeyBoardView extends LinearLayout {
                     }, 200L);
                 }
                 return false;
+            }
+        });
+        keyBoard.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(noScrollViewPager.isShown()||isSoftInputShown()) {
+                    hideAllView();
+                }else {
+                    showSelfLayout();//两者都没显示，直接显示自定义布局
+                }
             }
         });
 
