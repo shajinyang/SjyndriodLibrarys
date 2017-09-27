@@ -9,6 +9,10 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.RelativeLayout;
+
+import com.zx.xsk.sutillibrary.DisplayUtil;
+import com.zx.xsk.views.loadingview.SLoadingView;
 
 /**
  * 基础fragment带懒加载

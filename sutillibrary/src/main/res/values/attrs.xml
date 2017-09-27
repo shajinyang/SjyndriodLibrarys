@@ -62,4 +62,13 @@
         <attr name="bubble_arrowWidth" format="dimension"/>
         <attr name="bubble_arrowLocation" format="integer"/>
     </declare-styleable>
+
+    <!--loadingview属性-->
+    <declare-styleable name="SLoadingView">
+        <attr name="loading_view" format="integer"/>
+        <attr name="no_net_view" format="integer"/>
+        <attr name="error_net_view" format="integer"/>
+        <attr name="empty_data_view" format="integer"/>
+    </declare-styleable>
+
 </resources>

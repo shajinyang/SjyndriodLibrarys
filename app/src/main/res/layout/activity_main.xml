@@ -1,14 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     >
+    <com.zx.xsk.views.toolbar.SToolBarView
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:titleTextColor="#ffffff"
+        app:navigationIcon="@drawable/ic_arrow_back"
+        android:background="@color/colorAccent"
+        />
+    
+    <View
+        android:id="@+id/main2"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="#00ff00"/>
+
     <WebView
         android:id="@+id/content_view"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="20dp"
         android:layout_weight="1"
         />
     <com.zx.xsk.views.mutikeyboardview.MultiKeyBoardView
@@ -17,3 +33,4 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"/>
 </LinearLayout>
+</layout>
