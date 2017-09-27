@@ -91,6 +91,7 @@ public class MultiKeyBoardView extends LinearLayout {
         tabLayout.setupWithViewPager(noScrollViewPager);
         noScrollViewPager.setOffscreenPageLimit(titles.length);
         initListner();
+
         return this;
     }
 

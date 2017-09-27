@@ -16,34 +16,74 @@
       第二步：
       在module的gradle里配置
       dependencies {
-      	        compile 'com.github.shajinyang:SjyndriodLibrarys:1.0.0'
+      	        compile 'com.github.shajinyang:SjyndriodLibrarys:1.0.7'
       	}
 
+      	第三步：
+      	在自己的application里初始化
+      	Sjutil.init(this);
+
+### 公共常用父类
+####  BaseActivity
+      支持自义定状态栏样式，透明状态栏，无状态栏
+      支持databinding数据绑定
+      使用方法（和官方databinding使用方法相同）：
+      1，在gradle配置
+      android{
+      ...
+           dataBinding {
+              enabled true
+          }
+
+       ...
+      }
+      2,在对应的xml布局文件根节点添加<layout></layout>
+      3,继成activity即可
+
+#### BaseFragment
+      支持懒加载
+      支持databinding数据绑定
+      使用方法同BaseActivity
+      initData()  为懒加载方法
+      init() 初始化加载
+
+
+
+
+
+
+
+
 ### android开发常用工具类
+
 #### AppInfoUtil
-     getVersionCode 获取app版本号
-     getVersionName 获取app版本名
-     getUniquePsuedoID  获取设备唯一识别号
-     isBackground app是否处于后台
+     app信息工具类
 
 #### CharacterParser
-     getSelling 汉字转拼音
+     字符工具类
 
 #### ColorUtil
-     getCurrentColor  根据百分百获取颜色值
+     颜色工具类
 
 #### DateUtil
-     timestamp 当前时间毫秒数
-     getTime 毫秒数转换成yyyy-MM-dd
-     getTimeFour 毫秒数转换成yyyy-MM-dd HH:mm
-     getTimeTwo 毫秒数转换成yyyy.MM.dd
-     getTimeThree 毫秒数转换成yyyy.MM.dd HH:mm:ss
-     getTimeYear 毫秒数转换成yyyy
-     getDateHHmm yyyy-MM-dd HH:mm转化成HH：mm
-     getFormatStr 把str 2015-2-2转 2015-02-02
-     getSecond yyyy-MM-dd HH:mm:ss转化毫秒
-     getStrDate 获取当前日期yyyy-MM-dd HH:mm
-     getDate  yyyy-MM-dd HH:mm转化毫秒
-     getDateByStrDate yyyy-MM-dd HH:mm转化毫秒
+     日期工具类
+
+#### DisplayUtil
+      设备尺寸工具类
+
+#### FileUtil
+    文件帮助工具类
+
+#### NumberUtil
+      数字处理工具类
+
+#### PicUtil
+    图片工具类
+
+#### SettingsUtil
+     设置工具类
+
+#### ViewUtil
+    视图工具类
 
 
