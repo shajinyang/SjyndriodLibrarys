@@ -70,6 +70,7 @@ public class MainActivity extends BaseActivity<ActivityMainBinding> {
                     @Override
                     public void run() {
                         showNoNet();
+                        LoadingManager.closeLoading();
                     }
                 });
 
@@ -87,7 +88,7 @@ public class MainActivity extends BaseActivity<ActivityMainBinding> {
             }
         });
         binding.toolbar.setTitle("试一试标题很长会有什么特别的效果");
-
+        LoadingManager.showLoading(mContext);
     }
 
     @Override
@@ -102,9 +103,4 @@ public class MainActivity extends BaseActivity<ActivityMainBinding> {
 
     }
 
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        LoadingManager.destoryLoading();
-    }
 }

@@ -15,6 +15,7 @@ import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.RelativeLayout;
 
+import com.zx.xsk.managers.LoadingManager;
 import com.zx.xsk.sutillibrary.DisplayUtil;
 import com.zx.xsk.sutillibrary.R;
 import com.zx.xsk.views.loadingview.OnStateClickListener;
@@ -127,7 +128,11 @@ public abstract class BaseActivity<T extends ViewDataBinding> extends AppCompatA
         }
     }
 
-
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        LoadingManager.destoryLoading();
+    }
 
     /**
      * 设置状态栏

@@ -2,6 +2,7 @@ package com.zx.xsk;
 
 import android.app.Application;
 
+import com.zx.xsk.managers.LoadingManager;
 import com.zx.xsk.managers.SharedPreferenceManager;
 import com.zx.xsk.managers.ToastManager;
 

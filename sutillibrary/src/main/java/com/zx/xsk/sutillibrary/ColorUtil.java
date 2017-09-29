@@ -43,4 +43,66 @@ public class ColorUtil {
 
         return Color.argb(alphaCurrent, redCurrent, greenCurrent, blueCurrent);
     }
+
+    /**
+     * Color对象转换成字符串
+     * @param color Color对象
+     * @return 16进制颜色字符串#FF0000FF
+     * */
+    public static String toHexFromColor(int color,boolean isAlp){
+        String a,r,g,b;
+        StringBuilder su = new StringBuilder();
+        a=Integer.toHexString(Color.alpha(color));
+        r = Integer.toHexString(Color.red(color));
+        g = Integer.toHexString(Color.green(color));
+        b = Integer.toHexString(Color.blue(color));
+        a = a.length() == 1 ? "0" + a : a;
+        r = r.length() == 1 ? "0" + r : r;
+        g = g.length() ==1 ? "0" +g : g;
+        b = b.length() == 1 ? "0" + b : b;
+        a=a.toUpperCase();
+        r = r.toUpperCase();
+        g = g.toUpperCase();
+        b = b.toUpperCase();
+        su.append("#");
+        if(isAlp) {
+            su.append(a);
+        }
+        su.append(r);
+        su.append(g);
+        su.append(b);
+        //#FF0000FF
+        return su.toString();
+    }
+
+    /**
+     * Color对象转换成字符串
+     * @param color Color对象
+     * @return 16进制颜色字符串0xFF0000FF
+     * */
+    public static String toHexCodeFromColor(int color,boolean isAlp){
+        String a,r,g,b;
+        StringBuilder su = new StringBuilder();
+        a=Integer.toHexString(Color.alpha(color));
+        r = Integer.toHexString(Color.red(color));
+        g = Integer.toHexString(Color.green(color));
+        b = Integer.toHexString(Color.blue(color));
+        a = a.length() == 1 ? "0" + a : a;
+        r = r.length() == 1 ? "0" + r : r;
+        g = g.length() ==1 ? "0" +g : g;
+        b = b.length() == 1 ? "0" + b : b;
+        a=a.toUpperCase();
+        r = r.toUpperCase();
+        g = g.toUpperCase();
+        b = b.toUpperCase();
+        su.append("0x");
+        if(isAlp) {
+            su.append(a);
+        }
+        su.append(r);
+        su.append(g);
+        su.append(b);
+        //0xFF0000FF
+        return su.toString();
+    }
 }
