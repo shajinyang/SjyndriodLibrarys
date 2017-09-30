@@ -25,7 +25,7 @@ public class LoadingManager {
 
     public static void showLoading(Context mContext){
         if(myloadingview==null){
-            AlertDialog.Builder builder=new AlertDialog.Builder(mContext);
+            AlertDialog.Builder builder=new AlertDialog.Builder(mContext,R.style.LoadingDialogTheme);
             myloadingview=builder.setView(LayoutInflater.from(mContext).inflate(R.layout.progress_view,null)).create();
             myloadingview.setCanceledOnTouchOutside(false);
             Window dialogWindow = myloadingview.getWindow();
