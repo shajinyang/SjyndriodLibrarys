@@ -137,7 +137,7 @@ public class SLoadingView extends FrameLayout {
         if(emptyDataView!=null&&emptyDataView.isShown()){
             emptyDataView.setVisibility(GONE);
         }
-        if(loadingView!=null&&!loadingView.isShown()){
+        if(loadingView!=null&&loadingView.isShown()){
             loadingView.setVisibility(GONE);
         }
     }

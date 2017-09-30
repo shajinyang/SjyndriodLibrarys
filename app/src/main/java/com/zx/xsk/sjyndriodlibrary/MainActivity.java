@@ -64,6 +64,7 @@ public class MainActivity extends BaseActivity<ActivityMainBinding> {
                 try {
                     Thread.sleep(2000);
                 } catch (InterruptedException e) {
+
                     e.printStackTrace();
                 }
                 runOnUiThread(new Runnable() {
