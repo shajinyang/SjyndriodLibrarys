@@ -9,13 +9,12 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.RelativeLayout;
 
-import com.zx.xsk.managers.LoadingManager;
+import com.zx.xsk.managers.UIer;
 import com.zx.xsk.sutil.DisplayUtil;
 import com.zx.xsk.views.loadingview.OnStateClickListener;
 import com.zx.xsk.views.loadingview.SLoadingView;
@@ -130,7 +129,7 @@ public abstract class BaseActivity<T extends ViewDataBinding> extends AppCompatA
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        LoadingManager.destoryLoading();
+        UIer.destoryLoading();
     }
 
     /**

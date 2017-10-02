@@ -2,9 +2,8 @@ package com.zx.xsk;
 
 import android.app.Application;
 
-import com.zx.xsk.managers.LoadingManager;
-import com.zx.xsk.managers.SharedPreferenceManager;
-import com.zx.xsk.managers.ToastManager;
+import com.zx.xsk.managers.SPer;
+import com.zx.xsk.managers.Toaster;
 
 /**
  * 初始化基础类
@@ -14,7 +13,7 @@ import com.zx.xsk.managers.ToastManager;
 public class SjLib {
 
     public static void init(Application mApplication){
-        ToastManager.setApplication(mApplication);
-        SharedPreferenceManager.init(mApplication.getApplicationContext(),mApplication.getPackageName());
+        Toaster.setApplication(mApplication);
+        SPer.init(mApplication.getApplicationContext(),mApplication.getPackageName());
     }
 }

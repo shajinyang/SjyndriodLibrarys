@@ -11,7 +11,7 @@ import android.support.v4.app.Fragment;
  * Created by sjy on 2017/6/2.
  */
 
-public class IntentManager {
+public class Intenter {
 
     /**
      * 普通跳转

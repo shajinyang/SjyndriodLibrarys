@@ -5,10 +5,11 @@ import android.content.Context;
 import android.content.SharedPreferences;
 
 /**
+ * SharedPreferences操作类
  * Created by sjy on 2016/11/11.
  */
 
-public class SharedPreferenceManager {
+public class SPer {
     private static SharedPreferences preferences;
 
     public static void init(Context context, String name) {

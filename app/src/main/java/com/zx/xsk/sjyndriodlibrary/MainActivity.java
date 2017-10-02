@@ -1,20 +1,15 @@
 package com.zx.xsk.sjyndriodlibrary;
 
 import android.support.v4.app.Fragment;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.View;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
-import android.widget.Button;
 
 import com.zx.xsk.baseclass.BaseActivity;
-import com.zx.xsk.managers.IntentManager;
-import com.zx.xsk.managers.LoadingManager;
-import com.zx.xsk.managers.ToastManager;
+import com.zx.xsk.managers.Intenter;
+import com.zx.xsk.managers.UIer;
 import com.zx.xsk.sjyndriodlibrary.databinding.ActivityMainBinding;
 import com.zx.xsk.views.loadingview.OnStateClickListener;
-import com.zx.xsk.views.loadingview.SLoadingView;
 import com.zx.xsk.views.mutikeyboardview.MultiKeyBoardView;
 
 import java.util.ArrayList;
@@ -72,7 +67,7 @@ public class MainActivity extends BaseActivity<ActivityMainBinding> {
                     @Override
                     public void run() {
                         showNoNet();
-                        LoadingManager.closeLoading();
+                        UIer.closeLoading();
                     }
                 });
 
@@ -86,11 +81,11 @@ public class MainActivity extends BaseActivity<ActivityMainBinding> {
         binding.main2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                IntentManager.skipToActivity(mContext,MainActivity2.class);
+                Intenter.skipToActivity(mContext,MainActivity2.class);
             }
         });
         binding.toolbar.setTitle("试一试标题很长会有什么特别的效果");
-        LoadingManager.showLoading(mContext);
+        UIer.showLoading(mContext);
     }
 
     @Override

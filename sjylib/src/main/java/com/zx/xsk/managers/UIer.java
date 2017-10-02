@@ -15,14 +15,19 @@ import android.view.Window;
 import com.zx.xsk.sutillibrary.R;
 
 /**
+ * ui操作类
  * 加载提交弹框，屏蔽用户点击返回事件
  * Created by sjy on 2017/9/22.
  */
 
-public class LoadingManager {
+public class UIer {
     public static AlertDialog myloadingview;
 
 
+    /**
+     * 显示弹框
+     * @param mContext
+     */
     public static void showLoading(Context mContext){
         if(myloadingview==null){
             AlertDialog.Builder builder=new AlertDialog.Builder(mContext,R.style.LoadingDialogTheme);
@@ -35,12 +40,18 @@ public class LoadingManager {
     }
 
 
+    /**
+     * 关闭弹框
+     */
     public static void closeLoading(){
         if(myloadingview!=null){
             myloadingview.dismiss();
         }
     }
 
+    /**
+     * 清除弹框
+     */
     public static void destoryLoading(){
         if(myloadingview!=null){
             myloadingview=null;

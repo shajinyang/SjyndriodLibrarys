@@ -9,13 +9,13 @@ import android.widget.Toast;
  * Created by sjy on 2017/6/2.
  */
 
-public class ToastManager {
+public class Toaster {
 
     private static Application application;
     private static Toast toast=null;
 
     public static void setApplication(Application application) {
-        ToastManager.application = application;
+        Toaster.application = application;
     }
 
     /**
