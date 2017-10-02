@@ -7,9 +7,6 @@ import android.support.v7.widget.Toolbar;
 import android.util.AttributeSet;
 import android.view.View;
 
-import com.zx.xsk.sutillibrary.DisplayUtil;
-import com.zx.xsk.sutillibrary.R;
-
 /**
  * Created by sjy on 2017/9/27.
  */

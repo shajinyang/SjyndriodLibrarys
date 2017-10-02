@@ -58,6 +58,7 @@ public class MainActivity extends BaseActivity<ActivityMainBinding> {
                 showError();
             }
         });
+
         new Thread(new Runnable() {
             @Override
             public void run() {
