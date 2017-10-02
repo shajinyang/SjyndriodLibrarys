@@ -12,7 +12,7 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
-import com.zx.xsk.sutillibrary.DateUtil;
+import com.zx.xsk.sutil.DateUtil;
 import com.zx.xsk.weight.ImageLoder;
 
 /**

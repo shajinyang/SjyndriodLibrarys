@@ -16,8 +16,7 @@ import android.view.WindowManager;
 import android.widget.RelativeLayout;
 
 import com.zx.xsk.managers.LoadingManager;
-import com.zx.xsk.sutillibrary.DisplayUtil;
-import com.zx.xsk.sutillibrary.R;
+import com.zx.xsk.sutil.DisplayUtil;
 import com.zx.xsk.views.loadingview.OnStateClickListener;
 import com.zx.xsk.views.loadingview.SLoadingView;
 
@@ -45,7 +44,7 @@ public abstract class BaseActivity<T extends ViewDataBinding> extends AppCompatA
         mActivity=this;
         mContext=this;
         binding=DataBindingUtil.setContentView(this,bindLayout());
-        marTop=DisplayUtil.dip2px(mContext,45);//默认45dp
+        marTop= DisplayUtil.dip2px(mContext,45);//默认45dp
         if(isLoadingViewEnable()){
             sLoadingView=new SLoadingView(mContext);
             RelativeLayout.LayoutParams params=new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.MATCH_PARENT);

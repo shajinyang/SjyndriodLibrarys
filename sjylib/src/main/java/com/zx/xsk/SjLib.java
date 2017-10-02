@@ -11,7 +11,7 @@ import com.zx.xsk.managers.ToastManager;
  * Created by sjy on 2017/9/27.
  */
 
-public class Sjutil {
+public class SjLib {
 
     public static void init(Application mApplication){
         ToastManager.setApplication(mApplication);
