@@ -82,6 +82,7 @@ public class CodeView extends AppCompatTextView {
             @Override
             public void onAnimationStart(Animator animation) {
                 isCount=true;
+                setEnabled(false);
                 onTimeListener.startTime();
             }
 
@@ -89,6 +90,7 @@ public class CodeView extends AppCompatTextView {
             public void onAnimationEnd(Animator animation) {
                 isCount=false;
                 setText(overtxt);
+                setEnabled(true);
                 onTimeListener.endTime();
             }
 
