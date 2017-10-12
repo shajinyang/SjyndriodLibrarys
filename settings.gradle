@@ -1,1 +1,1 @@
-include ':app', ':sjylib'
+include ':sjylib', ':test'

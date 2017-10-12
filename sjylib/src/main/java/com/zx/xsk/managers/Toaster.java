@@ -30,7 +30,7 @@ public class Toaster {
             toast.setText(msg);
         }
         toast.show();
-//        Toast.makeText(context,msg,Toast.LENGTH_SHORT).show();
+//      Toast.makeText(context,msg,Toast.LENGTH_SHORT).show();
 
     }
 

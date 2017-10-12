@@ -7,14 +7,15 @@ import android.webkit.WebViewClient;
 
 import com.zx.xsk.baseclass.BaseActivity;
 import com.zx.xsk.managers.Intenter;
+import com.zx.xsk.managers.Toaster;
 import com.zx.xsk.managers.UIer;
-import com.zx.xsk.sjyndriodlibrary.databinding.ActivityMainBinding;
 import com.zx.xsk.views.loadingview.OnStateClickListener;
 import com.zx.xsk.views.mutikeyboardview.MultiKeyBoardView;
 
 import java.util.ArrayList;
+import java.util.List;
 
-public class MainActivity extends BaseActivity<ActivityMainBinding> {
+public class MainActivity extends BaseActivity {
     private MultiKeyBoardView multiKeyBoardView;
 
     @Override

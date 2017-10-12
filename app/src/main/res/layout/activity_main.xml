@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+<layout>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -20,7 +21,11 @@
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:background="#00ff00"/>
-
+    <Button
+        android:id="@+id/btn_db"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="db"/>
     <WebView
         android:id="@+id/content_view"
         android:layout_width="match_parent"

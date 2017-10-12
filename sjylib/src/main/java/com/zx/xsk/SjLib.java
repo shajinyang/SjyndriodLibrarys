@@ -16,4 +16,8 @@ public class SjLib {
         Toaster.setApplication(mApplication);
         SPer.init(mApplication.getApplicationContext(),mApplication.getPackageName());
     }
+    public static void init(Application mApplication,long dbversion){
+        Toaster.setApplication(mApplication);
+        SPer.init(mApplication.getApplicationContext(),mApplication.getPackageName());
+    }
 }
