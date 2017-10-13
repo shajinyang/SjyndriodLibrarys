@@ -1,4 +1,4 @@
-# 安卓开发框架类库
+# 安卓开发框架类库（该框架还在升级中）
 ![](s.png)![](j.png)![](y.png)
 
 ### 如何使用
@@ -200,6 +200,33 @@
              .setTabColor(0xff333333)
              .setTabTxtColor(0xff999999,0xffffffff);
       具体参数含义看源码注释
+
+#### MyNestedScorllView
+     带底部滑动监听的nestscorllview
+#### MyRecycleview
+     带底部滑动监听的recycleview
+#### NestedRecycleView
+     嵌套nestedscorllview的recycleview,解决滑动冲突
+     配合NestGridLayoutManager、NestLinearLayoutManager使用
+
+#### SToolBarView
+     toolbar封装
+#### BubbleImageView
+     仿微信聊天气泡Imageview
+#### CircleImageView
+     圆形图片，支持边框设置
+#### CircleRectangleView
+     圆角图片（可设置圆形图片）支持边框设置
+#### MyNumberPicker
+     设置picker边框和字体
+#### NoScrollViewPager
+     无滚动viewerpager
+#### SquareLinearLayout
+     正方形布局
+
+### 组件
+#### ImageLoader
+     基于glide的图片加载组件
 
 
 
