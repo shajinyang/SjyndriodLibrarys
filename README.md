@@ -181,7 +181,7 @@
       });
 
 #### MultiKeyBoardView
-     符合键盘布局，基于viewpager,主要是优化了系统键盘和view的显示逻辑
+     复合键盘布局，基于viewpager,主要是优化了系统键盘和view的显示逻辑
      使用示例：
      xml:
      <com.zx.xsk.views.mutikeyboardview.MultiKeyBoardView
