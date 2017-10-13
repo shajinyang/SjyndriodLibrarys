@@ -16,7 +16,7 @@
       第二步：
       在module的gradle里配置
       dependencies {
-      	        compile 'com.github.shajinyang:SjyndriodLibrarys:1.0.7'
+      	        compile 'com.github.shajinyang:SjyndriodLibrarys:1.1.9'
       	}
 
       	第三步：
