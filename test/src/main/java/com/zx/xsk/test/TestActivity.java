@@ -14,16 +14,18 @@ import com.orhanobut.logger.Logger;
 import com.zx.xsk.baseclass.BaseActivity;
 import com.zx.xsk.listeners.IOnChoosePicListener;
 import com.zx.xsk.test.databinding.ActivityTestBinding;
+import com.zx.xsk.views.LoadingRelativeLayout;
+import com.zx.xsk.views.loadingview.OnStateClickListener;
 import com.zx.xsk.weight.ImageLoder;
-
 import java.io.File;
 
 public class TestActivity extends BaseActivity<ActivityTestBinding> {
-
+    private LoadingRelativeLayout loadingRelativeLayout;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test);
+        loadingRelativeLayout=((LoadingRelativeLayout)findViewById(R.id.loading));
         findViewById(R.id.content).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -49,6 +51,34 @@ public class TestActivity extends BaseActivity<ActivityTestBinding> {
                 },true);
             }
         });
+
+        loadingRelativeLayout.setOnStateClick(new OnStateClickListener() {
+            @Override
+            public void onClickError() {
+                loadingRelativeLayout.clearAll();
+            }
+
+            @Override
+            public void onClickNoNet() {
+                loadingRelativeLayout.showError();
+            }
+        });
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    Thread.sleep(1500);
+                    runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            loadingRelativeLayout.showNoNet();
+                        }
+                    });
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        }).start();
     }
 
     @Override

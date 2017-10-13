@@ -50,12 +50,10 @@ public abstract class BaseActivity<T extends ViewDataBinding> extends AppCompatA
     public Context mContext;
     public boolean isHideStateBar=false;//是否隐藏状态栏，默认不隐藏
     public boolean isTransStateBar=false;//是否透明状态栏，默认否，配合fitsystemwindow使用（可改变某一个activity的状态栏颜色）
-    public SLoadingView sLoadingView;
-    private int marTop=0;//loadingview距离顶部距离
     private InvokeParam invokeParam;
-    private  boolean isCompress=false;
-    private  boolean isCut=false;
-    private int maxChooseSize=1;
+    private  boolean isCompress=false;//是否压缩
+    private  boolean isCut=false;//是否裁切
+    private int maxChooseSize=1;//最大选择数
     private  TakePhoto takePhoto;
     private IOnChoosePicListener iOnChoosePicListener;
     private Uri imageUri;
@@ -68,13 +66,6 @@ public abstract class BaseActivity<T extends ViewDataBinding> extends AppCompatA
         mActivity=this;
         mContext=this;
         binding=DataBindingUtil.setContentView(this,bindLayout());
-        marTop= DisplayUtil.dip2px(mContext,45);//默认45dp
-        if(isLoadingViewEnable()){
-            sLoadingView=new SLoadingView(mContext);
-            RelativeLayout.LayoutParams params=new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.MATCH_PARENT);
-            params.topMargin=marTop ;//设置距离顶部距离，避免遮挡toolbar,此高度等于toolbar高度
-            addContentView(sLoadingView,params);
-        }
         initListener();
         bindData();
         setStateBar();
@@ -85,80 +76,13 @@ public abstract class BaseActivity<T extends ViewDataBinding> extends AppCompatA
     }
 
     /**
-     * 设置loadingview距离顶部高度
-     * @param marTop
-     */
-    public void setMarTop(int marTop) {
-        this.marTop = marTop;
-    }
-    /**
-     * 设置loadingview距离顶部高度
-     * @param
-     */
-    public void setMarTop(View view) {
-        this.marTop =view.getHeight();
-    }
-
-    /**
-     * 显示加载中
-     */
-    public void showLoading(){
-        if(sLoadingView!=null){
-            sLoadingView.showLoading();
-        }
-    }
-    /**
-     * 显示数据错误
-     */
-    public void showError(){
-        if(sLoadingView!=null){
-            sLoadingView.showError();
-        }
-    }
-    /**
-     * 显示无网络
-     */
-    public void showNoNet(){
-        if(sLoadingView!=null){
-            sLoadingView.showNoNet();
-        }
-    }
-    /**
-     * 显示空数据
-     */
-    public void showEmpty(){
-        if(sLoadingView!=null){
-            sLoadingView.showEmpty();
-        }
-    }
-
-    /**
-     * 清空进度view
-     */
-    public void clearAll(){
-        if(sLoadingView!=null){
-            sLoadingView.clearAll();
-        }
-    }
-
-    /**
-     * 加载状态点击监听
-     * @param onStateClickListener
-     */
-    public void setOnStateClick(OnStateClickListener onStateClickListener){
-        if(sLoadingView!=null) {
-            sLoadingView.setOnStateClick(onStateClickListener);
-        }
-    }
-
-    /**
      * 选择拍照或图片，不压缩
      * @param iOnChoosePicListener
      */
     public void choosePic(IOnChoosePicListener iOnChoosePicListener){
         this.iOnChoosePicListener=iOnChoosePicListener;
         if (takePhoto==null){
-            takePhoto= (TakePhoto) TakePhotoInvocationHandler.of(this).bind(new TakePhotoImpl(mActivity,this));
+            takePhoto= (TakePhoto)TakePhotoInvocationHandler.of(this).bind(new TakePhotoImpl(mActivity,this));
         }
         takePhoto.onPickFromGallery();
     }
