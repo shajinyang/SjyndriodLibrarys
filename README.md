@@ -7,21 +7,24 @@
     第一步：
       在项目的gradle里配置
       allprojects {
-      		repositories {
-      			...
-      			maven { url 'https://jitpack.io' }
-      		}
-      	}
+        repositories {
+            ...
+            maven { url 'https://jitpack.io' }
+        }
+      }
 
       第二步：
       在module的gradle里配置
       dependencies {
-      	        compile 'com.github.shajinyang:SjyndriodLibrarys:1.1.9'
-      	}
+         ...
+      	 compile 'com.github.shajinyang:SjyndriodLibrarys:1.1.9'
+      }
 
-      	第三步：
-      	在自己的application里初始化
-      	Sjutil.init(this);
+      第三步：
+      在自己的application里初始化
+      Sjutil.init(this);
+
+
 
 ### 公共常用父类
 ####  BaseActivity
