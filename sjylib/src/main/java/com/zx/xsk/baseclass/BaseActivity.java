@@ -167,14 +167,6 @@ public abstract class BaseActivity<T extends ViewDataBinding> extends AppCompatA
         }
     }
 
-
-
-    /**
-     * 是否需要显示加载进度框
-     * @return
-     */
-    public abstract boolean isLoadingViewEnable();
-
     /**
      * 绑定布局
      * @return
