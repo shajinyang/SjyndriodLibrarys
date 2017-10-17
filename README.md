@@ -24,7 +24,7 @@
       在module的gradle里配置
       dependencies {
          ...
-      	 compile 'com.github.shajinyang:SjyndriodLibrarys:1.1.9'
+      	 compile 'com.github.shajinyang:SjyndriodLibrarys:1.2.3'
       }
 
       第三步：
