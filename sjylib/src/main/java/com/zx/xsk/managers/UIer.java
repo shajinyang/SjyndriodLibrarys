@@ -33,6 +33,7 @@ public class UIer {
             AlertDialog.Builder builder=new AlertDialog.Builder(mContext,R.style.LoadingDialogTheme);
             myloadingview=builder.setView(LayoutInflater.from(mContext).inflate(R.layout.progress_view,null)).create();
             myloadingview.setCanceledOnTouchOutside(false);
+            myloadingview.setCancelable(false);
             Window dialogWindow = myloadingview.getWindow();
             dialogWindow.setDimAmount(0);//设置昏暗度为0
         }
