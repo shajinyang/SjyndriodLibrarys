@@ -167,6 +167,17 @@ public abstract class BaseActivity<T extends ViewDataBinding> extends AppCompatA
         }
     }
 
+
+
+    public Bundle getBundle(){
+        if(getIntent().getExtras()!=null){
+           return getIntent().getExtras();
+        }else {
+            return new Bundle();
+        }
+    }
+
+
     /**
      * 绑定布局
      * @return

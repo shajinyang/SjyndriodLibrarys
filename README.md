@@ -84,10 +84,10 @@
             adapter= new CommonUpdateAdapter<MyWalletRes.ListBean>(mContext,R.layout.recycleview_item,list,binding.recyclerView) {
                 @Override
                 public void convert(BaseViewHolder holder, MyWalletRes.ListBean bean, int position) {
-                    holder.setText(R.id.total_money,"bean.getTotal_fee());
-                    holder.setText(R.id.tax,bean.getRevenue());
-                    holder.setText(R.id.fact_money,bean.getPracticalprice());
-                    holder.setTextTimeHm(R.id.time,bean.getAdd_time());
+                    holder.setText(R.id.total_money,"bean.getTotal_fee())
+                            .setText(R.id.tax,bean.getRevenue())
+                            .setText(R.id.fact_money,bean.getPracticalprice())
+                            .setTextTimeHm(R.id.time,bean.getAdd_time());
                 }
             };
             binding.recyclerView.setAdapter(adapter);
