@@ -81,10 +81,6 @@ public class TestActivity extends BaseActivity<ActivityTestBinding> {
         }).start();
     }
 
-    @Override
-    public boolean isLoadingViewEnable() {
-        return false;
-    }
 
     @Override
     public int bindLayout() {
