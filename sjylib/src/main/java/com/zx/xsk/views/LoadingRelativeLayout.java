@@ -39,7 +39,9 @@ public class LoadingRelativeLayout extends RelativeLayout {
     @Override
     protected void onAttachedToWindow() {
         super.onAttachedToWindow();
-        addLoadingView();
+        if(sLoadingView==null){
+            addLoadingView();
+        }
         if(sLoadingView!=null&&onStateClickListener!=null){
             sLoadingView.setOnStateClick(onStateClickListener);
         }
