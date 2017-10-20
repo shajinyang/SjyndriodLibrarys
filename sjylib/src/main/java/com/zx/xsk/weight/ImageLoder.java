@@ -12,6 +12,7 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.target.Target;
 
 import java.io.File;
+import java.util.Objects;
 import java.util.concurrent.ExecutionException;
 
 
@@ -20,6 +21,18 @@ import java.util.concurrent.ExecutionException;
  * Created by sjy on 2017/8/30.
  */
 public class ImageLoder {
+
+    public static void loadImgWithThumb(Object object,Object res,ImageView view,float val){
+        if(object instanceof Context){
+            Glide.with((Context) object).load(res).thumbnail(val).into(view);
+        }else if(object instanceof Activity){
+            Glide.with((Activity) object).load(res).thumbnail(val).into(view);
+        }else if(object instanceof Fragment){
+            Glide.with((Fragment) object).load(res).thumbnail(val).into(view);
+        }else if(object instanceof FragmentActivity){
+            Glide.with((FragmentActivity) object).load(res).thumbnail(val).into(view);
+        }
+    }
 
     public static void loadImg(Context mContext,Object url,ImageView view){
         Glide.with(mContext).load(url).into(view);
