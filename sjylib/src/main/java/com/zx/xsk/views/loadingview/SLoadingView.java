@@ -159,6 +159,18 @@ public class SLoadingView extends FrameLayout {
                 onStateClickListener.onClickNoNet();
             }
         });
+        loadingView.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+        emptyDataView.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
 
     }
 

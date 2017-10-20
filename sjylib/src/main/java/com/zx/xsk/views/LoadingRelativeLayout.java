@@ -14,6 +14,7 @@ import com.zx.xsk.views.loadingview.SLoadingView;
  */
 
 public class LoadingRelativeLayout extends RelativeLayout {
+    private boolean isNeedShow=true;//初次加载时是否需要创建并显示
     private SLoadingView sLoadingView;
     private OnStateClickListener onStateClickListener;
     public LoadingRelativeLayout(Context context) {
@@ -36,12 +37,25 @@ public class LoadingRelativeLayout extends RelativeLayout {
         addView(sLoadingView);
     }
 
+    /**
+     * 该方法可能会在clear之后才调用，所以在决定是否add的时候先判断isShow
+     */
     @Override
     protected void onAttachedToWindow() {
         super.onAttachedToWindow();
-        if(sLoadingView==null){
+        initLoadingView();
+
+    }
+
+    /**
+     * 初始化loadingview
+     */
+    private void initLoadingView() {
+        //加载窗体未创建，需要显示
+        if(sLoadingView==null&&isNeedShow){
             addLoadingView();
         }
+        //加载窗体已创建，点击事件已设置
         if(sLoadingView!=null&&onStateClickListener!=null){
             sLoadingView.setOnStateClick(onStateClickListener);
         }
@@ -51,22 +65,39 @@ public class LoadingRelativeLayout extends RelativeLayout {
      * 显示加载中
      */
     public void showLoading(){
+        //表示clearAll 先于onAttach执行，跳过了创建步骤，先创建
+        if(sLoadingView==null&&!isNeedShow) {
+            isNeedShow=true;
+            initLoadingView();
+        }
         if(sLoadingView!=null){
             sLoadingView.showLoading();
         }
+
     }
     /**
      * 显示数据错误
      */
     public void showError(){
+        //表示clearAll 先于onAttach执行，跳过了创建步骤，先创建
+        if(sLoadingView==null&&!isNeedShow) {
+            isNeedShow=true;
+            initLoadingView();
+        }
         if(sLoadingView!=null){
             sLoadingView.showError();
         }
+
     }
     /**
      * 显示无网络
      */
     public void showNoNet(){
+        //表示clearAll 先于onAttach执行，跳过了创建步骤，先创建
+        if(sLoadingView==null&&!isNeedShow) {
+            isNeedShow=true;
+            initLoadingView();
+        }
         if(sLoadingView!=null){
             sLoadingView.showNoNet();
         }
@@ -75,6 +106,11 @@ public class LoadingRelativeLayout extends RelativeLayout {
      * 显示空数据
      */
     public void showEmpty(){
+        //表示clearAll 先于onAttach执行，跳过了创建步骤，先创建
+        if(sLoadingView==null&&!isNeedShow) {
+            isNeedShow=true;
+            initLoadingView();
+        }
         if(sLoadingView!=null){
             sLoadingView.showEmpty();
         }
@@ -84,6 +120,7 @@ public class LoadingRelativeLayout extends RelativeLayout {
      * 清空进度view
      */
     public void clearAll(){
+        isNeedShow=false;//标记关闭窗体，防止addcontent在clear之后执行
         if(sLoadingView!=null){
             sLoadingView.clearAll();
         }
