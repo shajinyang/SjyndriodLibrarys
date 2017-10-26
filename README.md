@@ -240,6 +240,10 @@
 #### ImageLoader
      基于glide的图片加载组件
 
+#### PermissionRequester
+     android6.0/7.0以上动态权限申请
+
+
 
 
 
