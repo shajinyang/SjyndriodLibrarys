@@ -231,6 +231,11 @@
 #### SquareLinearLayout
      正方形布局
 
+#### DragFloatImageView
+    可拖拽带吸附效果的imageview
+
+
+
 ### 组件
 #### ImageLoader
      基于glide的图片加载组件
