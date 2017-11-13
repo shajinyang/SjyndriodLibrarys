@@ -1,3 +1,5 @@
+
+![](sjylogo.png)
 # 安卓开发类库（该框架还在升级完善中）
 ####  考虑到实际业务需求，已将网络请求部分和工具库部分独立拆分，可点击下方链接分别引用
 ### [网络请求库](https://github.com/shajinyang/SjyNetHelper)
@@ -6,7 +8,6 @@
 [https://github.com/shajinyang/SjyndroidUtil](https://github.com/shajinyang/SjyndroidUtil)
 
 
-![](s.png)![](j.png)![](y.png)
 
 ### 如何使用
 
